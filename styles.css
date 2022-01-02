@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -25,6 +26,7 @@ body{
     background-color: rgb(31, 31, 31);
     border-bottom: 5px solid var(--bg-color);
 }
+
 .sidebar{
     z-index: 100;
     background-color: var(--main-color);
@@ -35,10 +37,12 @@ body{
         width: 240px;
     */
     width: 85px;
+    /* transition: width 0.2s; */
 }
 
 .sidebar.active{
     width: 240px;
+    overflow: hidden;
 }
 
 .logo-content{
@@ -91,7 +95,6 @@ body{
 }
 
 .sidebar ul li a:hover{
-    /* color: rgb(20, 20, 20); */
     color: var(--main-color);
     background-color: white;
     border-radius: 5px;
@@ -104,10 +107,32 @@ body{
 
 .sidebar ul li a span{
     display: none;
+    white-space: nowrap;
 }
 
 .sidebar.active ul li a span{
     display: flex;
+}
+
+.sidebar:not(.active) ul li a:hover{
+    position: relative;
+}
+
+.sidebar:not(.active) ul li a:hover span{
+    display: block;
+    margin-left: 10px;
+    padding: 10px;
+    
+    font-weight: bold;
+    color: white;
+    white-space:nowrap;
+    background-color: var(--bg-color);
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    position: absolute;
+    left: 55px;
 }
 
 .main-content{
@@ -116,9 +141,14 @@ body{
         Initial Values
         width: calc(100% - 240px);
         left: 240px;
-        */
+    */
     left: 85px;
     width: calc(100% - 85px);
-    /* height: calc(100vh - 7em); */
+    height: calc(100vh - 7em);
     background-color: rgb(233, 233, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition: left 0.2s; */
+    /* transition: width 0.2s; */
 }
