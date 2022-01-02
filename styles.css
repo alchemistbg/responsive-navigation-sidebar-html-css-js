@@ -15,6 +15,16 @@ body{
     position: relative;
 }
 
+.header{
+    height: 7em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    color:rgb(233, 233, 233);
+    background-color: rgb(31, 31, 31);
+    border-bottom: 5px solid var(--bg-color);
+}
 .sidebar{
     z-index: 100;
     background-color: var(--main-color);
